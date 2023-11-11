@@ -8,6 +8,22 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import {createTheme, ThemeProvider} from "@mui/material";
+
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main:'#C6A99E',
+    }, 
+    secondary: {
+      main:'#B2C7C8', 
+    },
+    warning:{
+      main:'#F87474'
+    }
+  }
+});
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -23,7 +39,9 @@ export default function App() {
         <Links />
       </head>
       <body>
+      <ThemeProvider theme={theme}>
         <Outlet />
+      </ThemeProvider>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
