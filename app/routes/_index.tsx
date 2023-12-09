@@ -13,11 +13,11 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
     return (
-        <Grid container sx={{ display:'flex', justifyContent:'center',alignContent:'center',height: '100vh', width: '100%', flexDirection:'column'}}>
-          <StartPageHeading/>
-            <Grid item >
-                <Link to={'/projects'}>Download Resume</Link>
-            </Grid>
-        </Grid>
+        <Box aria-label='site-container' sx={{ backgroundColor:'#B2C7C8'}}>
+            <Box aria-label='content-container'>
+                <StartPageHeading/>
+            </Box>
+            <Box aria-label='footer'>social media icons</Box>
+        </Box>
     );
 }
