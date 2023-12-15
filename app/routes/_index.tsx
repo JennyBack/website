@@ -1,23 +1,39 @@
-import type {MetaFunction} from "@remix-run/node";
-import {Link} from "@remix-run/react";
-import {Box, Button, Divider, Grid, Typography} from "@mui/material";
-import StartPageHeading from "~/components/StartPageHeading";
-
+import type { MetaFunction } from '@remix-run/node';
+import { Box } from '@mui/material';
+import StartPage from '~/components/StartPage';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 export const meta: MetaFunction = () => {
     return [
-        {title: "Frontend developer Jenny Bäcklin"},
-        {name: "description", content: "Frontend developer Jenny Bäcklin portfolio"},
+        { title: 'Frontend developer Jenny Bäcklin' },
+        { name: 'description', content: 'Frontend developer Jenny Bäcklin portfolio' }
     ];
 };
 
+import { json } from '@remix-run/node';
+import { Link, useLoaderData } from '@remix-run/react';
+
+import { getProjects } from '~/models/project.server';
+
+export const loader = async () => {
+    return json({ projects: await getProjects() });
+};
+
 export default function Index() {
+    const { projects } = useLoaderData<typeof loader>();
+
     return (
-        <Grid container sx={{ display:'flex', justifyContent:'center',alignContent:'center',height: '100vh', width: '100%', flexDirection:'column'}}>
-          <StartPageHeading/>
-            <Grid item >
-                <Link to={'/projects'}>Download Resume</Link>
-            </Grid>
-        </Grid>
+        <Box aria-label="site-container" sx={{ backgroundColor: '#B2C7C8', margin: 0, padding: 0 }}>
+            <Box aria-label="content-container">
+                <StartPage projects={projects} />
+            </Box>
+            <Box aria-label="footer" sx={{ position: 'absolute', bottom: '20px', left: '5px' }}>
+                <MailOutlineIcon />
+                <LinkedInIcon />
+                <GitHubIcon />
+            </Box>
+        </Box>
     );
 }
