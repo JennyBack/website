@@ -30,6 +30,14 @@ const AboutSection = () => {
                     culpa qui officia deserunt mollit anim id est laborum.
                 </Typography>
             </Box>
+            <Box sx={{ display: 'flex' }}>
+                <Box sx={glassmorphism()}>
+                    <Typography>Technologies</Typography>
+                </Box>
+                <Box sx={glassmorphism()}>
+                    <Typography>Education/Experiences</Typography>
+                </Box>
+            </Box>
         </Box>
     );
 };

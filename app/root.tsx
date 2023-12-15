@@ -1,4 +1,4 @@
-import { cssBundleHref } from '@remix-run/css-bundle';
+import globalStyles from '~/styles/global.css';
 import type { LinksFunction } from '@remix-run/node';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import { createTheme, ThemeProvider } from '@mui/material';
@@ -18,9 +18,9 @@ const theme = createTheme({
     }
 });
 
-export const links: LinksFunction = () => [
-    ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : [])
-];
+export const links: LinksFunction = () => {
+    return [{ rel: 'stylesheet', href: globalStyles }];
+};
 
 export default function App() {
     return (

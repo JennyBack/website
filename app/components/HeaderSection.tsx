@@ -1,25 +1,26 @@
 import { Avatar, Box, Typography } from '@mui/material';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 
+type HeaderSectionProps = {
+    headerTitle: string;
+};
+
 const sectionContainer = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '5px'
+    padding: '1.5rem',
+    margin: 'auto'
 };
 
-const avatarStyle = {
-    height: '200px',
-    width: '200px',
-    margin: '25px'
-};
-
-const HeaderSection = () => {
+const HeaderSection = ({ headerTitle }: HeaderSectionProps) => {
     return (
-        <Box aria-label={'about-section'} sx={sectionContainer}>
-            <Typography>Frontend developer Jenny Bäcklin</Typography>
-            <ArrowCircleDownIcon />
+        <Box aria-label={'header-section'} sx={sectionContainer}>
+            <Typography sx={{ fontFamily: 'Raleway,sans-serif', fontSize: '2rem' }}>
+                {headerTitle}
+            </Typography>
+            <ArrowCircleDownIcon sx={{ width: '30px', height: '30px' }} color="primary" />
         </Box>
     );
 };

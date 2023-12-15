@@ -1,6 +1,9 @@
 import type { MetaFunction } from '@remix-run/node';
 import { Box } from '@mui/material';
 import StartPage from '~/components/StartPage';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 export const meta: MetaFunction = () => {
     return [
@@ -27,7 +30,9 @@ export default function Index() {
                 <StartPage projects={projects} />
             </Box>
             <Box aria-label="footer" sx={{ position: 'absolute', bottom: '20px', left: '5px' }}>
-                social media icons
+                <MailOutlineIcon />
+                <LinkedInIcon />
+                <GitHubIcon />
             </Box>
         </Box>
     );

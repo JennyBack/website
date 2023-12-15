@@ -2,7 +2,7 @@
   "name": "fly-remix",
   "private": true,
   "sideEffects": false,
-  "type": ".cjs",
+  "type": "commonjs",
   "scripts": {
     "build": "remix build",
     "deploy": "fly deploy --remote-only",

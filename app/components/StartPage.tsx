@@ -4,9 +4,17 @@ import AboutSection from './AboutSection';
 import HeaderSection from './HeaderSection';
 import { Project } from '~/models/project.server';
 
-type StartPageProps = {
+type ExternalProps = {
     projects: Project[];
 };
+
+type Texts = {
+    headerTitle: string;
+};
+
+type StartPageProps = {
+    texts: Texts;
+} & ExternalProps;
 
 const containerStyle = {
     scrollSnapType: 'y mandatory',
@@ -38,11 +46,12 @@ export const glassmorphism = (minWidth?: number | null) => {
     };
 };
 
-const StartPage = ({ projects }: StartPageProps) => {
+const StartPage = (props: StartPageProps) => {
+    let { projects, texts } = props;
     return (
         <Box sx={containerStyle}>
             <Box sx={sectionStyle}>
-                <HeaderSection />
+                <HeaderSection headerTitle={texts.headerTitle} />
             </Box>
             <Box sx={sectionStyle}>
                 <AboutSection />
@@ -54,4 +63,12 @@ const StartPage = ({ projects }: StartPageProps) => {
     );
 };
 
-export default StartPage;
+const TextLayer = (props: ExternalProps) => {
+    let texts = {
+        headerTitle: 'Frontend developer Jenny Bäcklin'
+    };
+
+    return <StartPage texts={texts} {...props} />;
+};
+
+export default TextLayer;

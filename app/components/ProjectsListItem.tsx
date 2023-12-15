@@ -44,7 +44,10 @@ function BasicCard({ project }: BasicCardProps) {
             </CardContent>
             <CardActions>
                 <Link to={`/projects/${project.slug}`}>
-                    <Button size="small">Read post</Button>
+                    <Button size="small">Read about it</Button>
+                </Link>
+                <Link to={`/applications/${project.slug}`}>
+                    <Button size="small">Test it</Button>
                 </Link>
             </CardActions>
             <Divider />
