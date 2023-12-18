@@ -21,7 +21,7 @@ const AboutSection = () => {
         <Box aria-label={'about-section'} sx={sectionContainer}>
             <Box sx={glassmorphism(240)}>
                 <Avatar alt={'Jenny backlin img'} src={''} sx={avatarStyle} />
-                <Typography>
+                <Typography sx={{ fontFamily: 'Questrial, sans-serif' }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -32,10 +32,14 @@ const AboutSection = () => {
             </Box>
             <Box sx={{ display: 'flex' }}>
                 <Box sx={glassmorphism()}>
-                    <Typography>Technologies</Typography>
+                    <Typography sx={{ fontFamily: 'Questrial, sans-serif' }}>
+                        Technologies
+                    </Typography>
                 </Box>
                 <Box sx={glassmorphism()}>
-                    <Typography>Education/Experiences</Typography>
+                    <Typography sx={{ fontFamily: 'Questrial, sans-serif' }}>
+                        Education/Experiences
+                    </Typography>
                 </Box>
             </Box>
         </Box>
