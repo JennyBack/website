@@ -27,16 +27,27 @@ function BasicCard({ project }: BasicCardProps) {
     return (
         <Card key={project.title} sx={glassmorphism(275)}>
             <CardContent>
-                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                <Typography
+                    sx={{ fontSize: 14, fontFamily: 'Questrial, sans-serif' }}
+                    color="text.secondary"
+                    gutterBottom
+                >
                     {project.title}
                 </Typography>
-                <Typography variant="h5" component="div">
+                <Typography
+                    variant="h5"
+                    component="div"
+                    sx={{ fontFamily: 'Questrial, sans-serif' }}
+                >
                     be{bull}nev{bull}o{bull}lent
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                <Typography
+                    color="text.secondary"
+                    sx={{ mb: 1.5, fontFamily: 'Questrial, sans-serif' }}
+                >
                     adjective
                 </Typography>
-                <Typography variant="body2">
+                <Typography variant="body2" sx={{ fontFamily: 'Questrial, sans-serif' }}>
                     well meaning and kindly.
                     <br />
                     {'"a benevolent smile"'}

@@ -1,9 +1,9 @@
 import globalStyles from '~/styles/global.css';
 import type { LinksFunction } from '@remix-run/node';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material';
 
-const theme = createTheme({
+let theme = createTheme({
     palette: {
         mode: 'light',
         primary: {
@@ -15,8 +15,17 @@ const theme = createTheme({
         warning: {
             main: '#F87474'
         }
+    },
+    typography: {
+        h1: {
+            fontFamily: 'Rozha One,sans-serif',
+            fontSize: '4rem',
+            cursor: 'none'
+        }
     }
 });
+
+theme = responsiveFontSizes(theme);
 
 export const links: LinksFunction = () => {
     return [{ rel: 'stylesheet', href: globalStyles }];

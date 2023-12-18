@@ -1,4 +1,4 @@
-import { Avatar, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 
 type HeaderSectionProps = {
@@ -16,10 +16,8 @@ const sectionContainer = {
 
 const HeaderSection = ({ headerTitle }: HeaderSectionProps) => {
     return (
-        <Box aria-label={'header-section'} sx={sectionContainer}>
-            <Typography sx={{ fontFamily: 'Raleway,sans-serif', fontSize: '2rem' }}>
-                {headerTitle}
-            </Typography>
+        <Box aria-label={'header-section-heading'} sx={sectionContainer}>
+            <Typography variant="h1">{headerTitle}</Typography>
             <ArrowCircleDownIcon sx={{ width: '30px', height: '30px' }} color="primary" />
         </Box>
     );
